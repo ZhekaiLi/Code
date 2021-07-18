@@ -6,13 +6,13 @@ import java.util.Scanner;
 import java.util.TreeSet;
 
 
-public class AdjSet {
+public class Graph {
 
     private int V;
     private int E;
     private TreeSet<Integer>[] adj;
 
-    public AdjSet(String filename){
+    public Graph(String filename){
         File file = new File(filename);
 
         try (Scanner scanner = new Scanner(file)){
@@ -43,7 +43,7 @@ public class AdjSet {
 
     }
 
-    private void validateVertex(int v){
+    public void validateVertex(int v){
         if (v < 0 || v >= V) throw new IllegalArgumentException("vertex " + v + " is invalid");
     }
 
@@ -87,7 +87,7 @@ public class AdjSet {
     }
 
     public static void main(String[] args){
-        AdjSet adjList = new AdjSet("g.txt"); // 相对地址在工程文件夹下
-        System.out.println(adjList);
+        Graph graph = new Graph("g.txt"); // 相对地址在工程文件夹下
+        System.out.println(graph);
     }
 }
