@@ -35,14 +35,14 @@ public class SingleSourcePath {
         }
     }
 
-    public boolean isConnetedTo(int t){
+    public boolean isConnectedTo(int t){
         G.validateVertex(t);
         return visited[t];
     }
 
     public Iterable<Integer> path(int t){
         ArrayList<Integer> res = new ArrayList<>();
-        if(!isConnetedTo(t)) return res;
+        if(!isConnectedTo(t)) return res;
 
         int cur = t;
         while(cur != s){
